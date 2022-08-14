@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 183770128}
   - component: {fileID: 183770127}
   - component: {fileID: 183770129}
+  - component: {fileID: 183770130}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -278,6 +279,19 @@ MonoBehaviour:
   clipDead: {fileID: 8300000, guid: 9b3e4ca8130ea724aa597732964b52a4, type: 3}
   clipWin: {fileID: 8300000, guid: 1ee06f9acb6b4c24485229ce9d770d4a, type: 3}
   clipLose: {fileID: 8300000, guid: eeea9bac49790934ab2fa44b087a21e8, type: 3}
+--- !u!114 &183770130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183770122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815f3515e031e3d4abe29f1a01129af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fps: 120
 --- !u!1 &268689352
 GameObject:
   m_ObjectHideFlags: 0

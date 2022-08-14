@@ -7,7 +7,8 @@ using UnityEngine;
 using System;
 
 public class GameManager : MonoBehaviour
-{   
+{
+    private bool isDead;
     public static GameManager singleton { get; private set; }
     public Action gameOver;
     private void Awake()
@@ -17,6 +18,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOver?.Invoke();
+        if (!isDead)
+        {
+            gameOver?.Invoke();
+            isDead = true;
+        }
     }
 }

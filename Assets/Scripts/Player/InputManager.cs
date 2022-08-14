@@ -45,27 +45,31 @@ public class InputManager : MonoBehaviour
 
             if (Input.touchCount > 0)
             {
-                Debug.Log(1);
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
                     startPointerPotision = Input.GetTouch(0).position;
                 }
-                else if (Input.GetTouch(0).phase == TouchPhase.Canceled)
+                else if (Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
                     endPointerPotision = Input.GetTouch(0).position;
                     float DifferenceX = startPointerPotision.x - endPointerPotision.x;
                     float DifferenceY = startPointerPotision.y - endPointerPotision.y;
-                    if (DifferenceX > 0.1)
+                    Debug.Log(DifferenceX);
+                    if (DifferenceX < -100)
                     {
-                        player.ChangeCuurentMovePointId(DifferenceX);
+                        player.ChangeCuurentMovePointId(-DifferenceX);
                     }
-                    if (DifferenceY > 0.1)
+                    else if(DifferenceX > 100)
                     {
-                        player.Jump();
+                        player.ChangeCuurentMovePointId(-DifferenceX);
                     }
-                    else if (DifferenceY < -0.1)
+                    if (DifferenceY > 100)
                     {
                         player.Sit();
+                    }
+                    else if (DifferenceY < -100)
+                    {
+                        player.Jump();
                     }
                 }
 
